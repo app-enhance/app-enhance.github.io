@@ -18,6 +18,6 @@ extra:
 
 markdown_extensions:
   - codehilite(css_class=code)
-  - toc:
-    permalink: '#'
   - admonition
+  - toc:
+      permalink: '#'
