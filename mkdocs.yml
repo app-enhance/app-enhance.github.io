@@ -3,7 +3,7 @@ site_description: 'Documentation for app-enhance projects'
 site_author: 'Wojciech Gadziński'
 site_url: 'https://app-enhance.github.io'
 
-repo_name: 'app-enhance'
+repo_name: 'ae-docs'
 repo_url: 'https://github.com/app-enhance/ae-docs'
 
 theme: 'material'
@@ -21,3 +21,6 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: '#'
+
+remote_branch: master
+remote_name: app-enhance.github.io
