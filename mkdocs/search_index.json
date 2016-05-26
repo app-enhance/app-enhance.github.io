@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to App-Enhance's documentation!\n#\n\n\nApp-Enhance\n is a set of boilerplate/extensions libraries for any .Net application. All code is based on \n.Net Core\n and .NETStandard Library 1.5. It tries to cover and simplify many common use cases which you can encounter when you create real applications. They are dependency injection, events, messaging, transactions and persistance. \n\n\nThe main rules\n#\n\n\n\n\nSimplicity of code\n\n\nExtensiblity\n\n\nLess coupling\n\n\nIoC based\n\n\nVery lightwight \n\n\n\n\nProject structure\n#\n\n\n\n\n\n\n\n\nArea\n\n\nRepository\n\n\nPackages\n\n\n\n\n\n\n\n\n\n\nDependency injection\n\n\nae-di\n\n\nAE.Extensions.DependencyInjection.Abstractions AE.Extensions.DependencyInjection\n\n\n\n\n\n\nEvents\n\n\nae-core\n\n\n?\n\n\n\n\n\n\nTransactions\n\n\nae-core\n\n\n?\n\n\n\n\n\n\nMessaging\n\n\nae-core\n\n\n?\n\n\n\n\n\n\nPersistance\n\n\nae-core\n\n\n?\n\n\n\n\n\n\nDomain Driven Design\n\n\nae-core\n\n\n?\n\n\n\n\n\n\n\n\nPlease follow navigation co read documentation.", 
+            "text": "Welcome to App-Enhance's documentation!\n#\n\n\nApp-Enhance\n is a set of boilerplate/extensions libraries for any .Net application. All code is based on \n.Net Core\n and .NETStandard Library 1.5. It tries to cover and simplify many common use cases which you can encounter when you create real applications. They are dependency injection, events, messaging, transactions and persistance. \n\n\nThe main rules\n#\n\n\n\n\nSimplicity of code\n\n\nExtensiblity\n\n\nLess coupling\n\n\nIoC based\n\n\nVery lightwight \n\n\n\n\nProject structure\n#\n\n\n\n\n\n\n\n\nArea\n\n\nRepository\n\n\nPackages\n\n\n\n\n\n\n\n\n\n\nDependency injection\n\n\nae-di\n\n\nAE.Extensions.DependencyInjection.Abstractions  AE.Extensions.DependencyInjection\n\n\n\n\n\n\nEvents\n\n\nae-core\n\n\n?\n\n\n\n\n\n\nTransactions\n\n\nae-core\n\n\n?\n\n\n\n\n\n\nMessaging\n\n\nae-core\n\n\n?\n\n\n\n\n\n\nPersistance\n\n\nae-core\n\n\n?\n\n\n\n\n\n\nDomain Driven Design\n\n\nae-core\n\n\n?\n\n\n\n\n\n\n\n\nPlease follow navigation co read documentation.", 
             "title": "Home"
         }, 
         {
@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/#project-structure", 
-            "text": "Area  Repository  Packages      Dependency injection  ae-di  AE.Extensions.DependencyInjection.Abstractions AE.Extensions.DependencyInjection    Events  ae-core  ?    Transactions  ae-core  ?    Messaging  ae-core  ?    Persistance  ae-core  ?    Domain Driven Design  ae-core  ?     Please follow navigation co read documentation.", 
+            "text": "Area  Repository  Packages      Dependency injection  ae-di  AE.Extensions.DependencyInjection.Abstractions  AE.Extensions.DependencyInjection    Events  ae-core  ?    Transactions  ae-core  ?    Messaging  ae-core  ?    Persistance  ae-core  ?    Domain Driven Design  ae-core  ?     Please follow navigation co read documentation.", 
             "title": "Project structure"
         }, 
         {
