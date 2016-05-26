@@ -233,9 +233,6 @@
         <div class="wrapper">
           
           <h1 id="aeextensionsdependencyinjection">AE.Extensions.DependencyInjection<a class="headerlink" href="#aeextensionsdependencyinjection" title="Permanent link">#</a></h1>
-<p><a href="https://travis-ci.org/app-enhance/ae-di"><img alt="Build Status" src="https://travis-ci.org/app-enhance/ae-di.svg?branch=master" /></a><br />
-<a href="https://ci.appveyor.com/project/Ermesx/ae-di/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/s5ej8f3uechsx3gs/branch/master?svg=true" /></a><br />
-<a href="https://www.myget.org/gallery/app-enhance-dev"><img alt="app-enhance-dev MyGet Build Status" src="https://www.myget.org/BuildSource/Badge/app-enhance-dev?identifier=891bb83e-b009-4793-b622-495a6eab6afc" /></a></p>
 <p>This is an extension library for <code>Microsoft.Extensions.DependencyInjection</code> which provides you with a declarative way to pick out lifetime of services and register them in just a few lines.</p>
 <h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">#</a></h2>
 <p>When you want to register a service (create dependency) in <code>IServiceCollection</code> you have to describe at least 3 things.</p>
@@ -244,8 +241,8 @@
 <li>Service implementation</li>
 <li>Lifetime scope</li>
 </ul>
-<p>Ususally it should look like this (see below)<br />
-```c#<br />
+<p>Ususally it should look like this (see below)</p>
+<p>```c#<br />
 // Method ex. in Startup.cs<br />
 // doc: http://docs.asp.net/en/latest/fundamentals/dependency-injection.html</p>
 <p>public void ConfigureServices(IServiceCollection services)<br />
@@ -322,6 +319,7 @@ public interface INotRegisterDependency<br />
 In order to use this approach you have to do two things:
 
 * Select dependency interface and inherit
+
 ```c#
 // It will be registered as a 
 // new ServiceDescriptor(typeof(IBankManager), typeof(BankManager), ServiceLifetime.Transient);
@@ -343,22 +341,24 @@ public class BankManager : IBankManager
 
 
 <ul>
-<li>
-<p>Use extensions methods for <code>IServiceCollection</code> or <code>ServiceDescriptorsBuilder</code> to retrieve all dependencies from assemblies (see below)<br />
-```c#<br />
+<li>Use extensions methods for <code>IServiceCollection</code> or <code>ServiceDescriptorsBuilder</code> to retrieve all dependencies from assemblies (see below)</li>
+</ul>
+<p>```c#<br />
 public void ConfigureServices(IServiceCollection services)<br />
 {<br />
     var assemblies = ... Get all assemblies ex. by ILibraryLoader or Assembly.GetExecutingAssembly(...) etc.<br />
     services.AddFromAssemblies(assemblies);</p>
-<p>// Add MVC services to the services container.<br />
-services.AddMvc();<br />
-}</p>
-</li>
-</ul>
+<div class="code"><pre><span></span>// Add MVC services to the services container.
+services.AddMvc();
+</pre></div>
+
+
+<p>}</p>
 <div class="code"><pre><span></span>There are many custom ways to use service description builder. Most cases described [here](https://github.com/app-enhance/ae-di/wiki/Custom-usage-of-service-descriptions-builder)
 
 ### Repleace service
 There is possible to override implementaion of service (decorate) which was registered. You can do that by `RepleaceServiceAttribute` (see exapmle below)
+
 ```c#
 [RepleaceService(typeof(BankManager))]
 public class AuditBankManager : BankManager
