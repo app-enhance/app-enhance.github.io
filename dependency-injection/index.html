@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Home - App-Enhance docs</title>
+        <title>Home - App-Enhance</title>
       
       
       
@@ -20,11 +20,13 @@
       
     
     <meta property="og:url" content="https://app-enhance.github.io/dependency-injection/">
-    <meta property="og:title" content="App-Enhance docs">
-    <meta property="og:image" content="https://app-enhance.github.io/dependency-injection//../">
-    <meta name="apple-mobile-web-app-title" content="App-Enhance docs">
+    <meta property="og:title" content="App-Enhance">
+    <meta property="og:image" content="https://app-enhance.github.io/dependency-injection//../images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="App-Enhance">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../images/logo.png">
     
     
     <link rel="shortcut icon" type="image/x-icon" href="../None">
@@ -70,7 +72,7 @@
   
   
   
-  <body class="palette-primary-deep-orange palette-accent-blue-grey">
+  <body class="palette-primary-teal palette-accent-blue-grey">
     
       
       
@@ -105,6 +107,11 @@
     </div>
     
     
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/ermesx" title="@ermesx on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
     <div class="button button-search" role="button" aria-label="Search">
       <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
     </div>
@@ -132,9 +139,13 @@
   <a href="https://github.com/app-enhance/ae-docs" class="project">
     <div class="banner">
       
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
       <div class="name">
         <strong>
-          App-Enhance docs
+          App-Enhance
           <span class="version">
             
           </span>
@@ -224,6 +235,20 @@
           
         </ul>
         
+          <hr>
+          <span class="section">The author</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/ermesx" target="_blank" title="@ermesx on GitHub">
+                  @ermesx on GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
       </div>
     </div>
   </div>
@@ -242,14 +267,14 @@
 <li>Lifetime scope</li>
 </ul>
 <p>Ususally it should look like this (see below)</p>
-<p>```c#<br />
-// Method ex. in Startup.cs<br />
+<p>```c#
+// Method ex. in Startup.cs
 // doc: http://docs.asp.net/en/latest/fundamentals/dependency-injection.html</p>
-<p>public void ConfigureServices(IServiceCollection services)<br />
-{<br />
-    var serviceDescriptor = new ServiceDescriptor(typeof(IBankManager), typeof(BankManager), ServiceLifetime.Transient);<br />
-    services.Add(serviceDescriptor);<br />
-    // or <br />
+<p>public void ConfigureServices(IServiceCollection services)
+{
+    var serviceDescriptor = new ServiceDescriptor(typeof(IBankManager), typeof(BankManager), ServiceLifetime.Transient);
+    services.Add(serviceDescriptor);
+    // or 
     services.AddTransient<IBankManager, BankManager>();</p>
 <div class="code"><pre><span></span>// Add MVC services to the services container.
 services.AddMvc();
@@ -276,30 +301,30 @@ public class BankManager : IBankManager
 </pre></div>
 
 
-<p>Every service must be described in <code>ConfigureServices</code> method manualy which means that something can be easily missed.<br />
-Many people who create libraries like MVC they add static extension methods to simplify registration. <br />
-It means all descriptions of their services are hidden. <br />
+<p>Every service must be described in <code>ConfigureServices</code> method manualy which means that something can be easily missed.
+Many people who create libraries like MVC they add static extension methods to simplify registration. 
+It means all descriptions of their services are hidden. 
 They make our life easier but what about our own custom services ? What if you have dozens of them ?</p>
-<p>I'm inspired by how Orchard team resolves that issue. <br />
-They created interfaces which correspond to lifetime scopes. So every service interface inherits appropriate "scope interface" and describes dependencies to register in global container.<br />
+<p>I'm inspired by how Orchard team resolves that issue. 
+They created interfaces which correspond to lifetime scopes. So every service interface inherits appropriate "scope interface" and describes dependencies to register in global container.
 In my case it looks like below - interfaces correspond exactly to <code>ServiceLifetime</code> enum.</p>
-<p>```c#<br />
-// You can use it to get all dependencies<br />
-public interface IDependency<br />
-{<br />
+<p>```c#
+// You can use it to get all dependencies
+public interface IDependency
+{
 }</p>
-<p>public interface ISingletonDependency : IDependency<br />
-{<br />
+<p>public interface ISingletonDependency : IDependency
+{
 }</p>
-<p>public interface IScopedDependency : IDependency<br />
-{<br />
+<p>public interface IScopedDependency : IDependency
+{
 }</p>
-<p>public interface ITransientDependency : IDependency<br />
-{<br />
+<p>public interface ITransientDependency : IDependency
+{
 }</p>
-<p>// Omit registration for special cases<br />
-public interface INotRegisterDependency<br />
-{<br />
+<p>// Omit registration for special cases
+public interface INotRegisterDependency
+{
 }</p>
 <div class="code"><pre><span></span>## Goals/Features
 
@@ -343,10 +368,10 @@ public class BankManager : IBankManager
 <ul>
 <li>Use extensions methods for <code>IServiceCollection</code> or <code>ServiceDescriptorsBuilder</code> to retrieve all dependencies from assemblies (see below)</li>
 </ul>
-<p>```c#<br />
-public void ConfigureServices(IServiceCollection services)<br />
-{<br />
-    var assemblies = ... Get all assemblies ex. by ILibraryLoader or Assembly.GetExecutingAssembly(...) etc.<br />
+<p>```c#
+public void ConfigureServices(IServiceCollection services)
+{
+    var assemblies = ... Get all assemblies ex. by ILibraryLoader or Assembly.GetExecutingAssembly(...) etc.
     services.AddFromAssemblies(assemblies);</p>
 <div class="code"><pre><span></span>// Add MVC services to the services container.
 services.AddMvc();
