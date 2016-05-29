@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Getting started - App-Enhance</title>
+      
+      
+      
+        <link rel="canonical" href="https://app-enhance.github.io/dependency-injection/getting-started/">
+      
+      
+        <meta name="author" content="Wojciech Gadziński">
+      
+    
+    <meta property="og:url" content="https://app-enhance.github.io/dependency-injection/getting-started/">
+    <meta property="og:title" content="App-Enhance">
+    <meta property="og:image" content="https://app-enhance.github.io/dependency-injection/getting-started//../../images/logo2.jpg">
+    <meta name="apple-mobile-web-app-title" content="App-Enhance">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../images/logo2.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../None">
+    <link rel="icon" type="image/x-icon" href="../../None">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-0dac3e5884.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-teal palette-accent-blue-grey">
+    
+      
+      
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Dependency injection <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Getting started
+      </div>
+    </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/ermesx" title="@ermesx on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://github.com/app-enhance/ae-docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../images/logo2.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>
+          App-Enhance
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+          <br>
+          app-enhance/ae-docs
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            
+            <a href="https://github.com/app-enhance/ae-docs/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/app-enhance/ae-docs/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Dependency injection</span>
+    <ul>
+      
+        
+  <li>
+    <a class="current" title="Getting started" href="./">
+      Getting started
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Motivation" href="#motivation">
+                Motivation
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Overview" href="#overview">
+                Overview
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="How does it work?" href="#how-does-it-work">
+                How does it work?
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Features" href="../features/">
+      Features
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Customizations" href="../customizations/">
+      Customizations
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Integrations" href="../integrations/">
+      Integrations
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Roadmap" href="../roadmap/">
+      Roadmap
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Contributing" href="../../contributing/">
+      Contributing
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">The author</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/ermesx" target="_blank" title="@ermesx on GitHub">
+                  @ermesx on GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="dependency-injection">Dependency injection<a class="headerlink" href="#dependency-injection" title="Permanent link">#</a></h1>
+<p><code>AE.Extensions.DependencyInjection</code> packages are an extension library for <code>Microsoft.Extensions.DependencyInjection</code> which provides you with a declarative way to pick out lifetime of services and register them in just a few lines.</p>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">#</a></h2>
+<p>When you want to register a service (create dependency) in <code>IServiceCollection</code> you have to describe at least 3 things:</p>
+<ul>
+<li>Service interface</li>
+<li>Service implementation</li>
+<li>Lifetime scope</li>
+</ul>
+<p>Usually it should look like this (see below)</p>
+<div class="code"><pre><span></span><span class="c1">// Method ex. in Startup.cs</span>
+<span class="c1">// doc: http://docs.asp.net/en/latest/fundamentals/dependency-injection.html</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">serviceDescriptor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ServiceDescriptor</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IBankManager</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">BankManager</span><span class="p">),</span> <span class="n">ServiceLifetime</span><span class="p">.</span><span class="n">Transient</span><span class="p">);</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">serviceDescriptor</span><span class="p">);</span>
+    <span class="c1">// or</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IBankManager</span><span class="p">,</span> <span class="n">BankManager</span><span class="p">&gt;();</span>
+
+    <span class="c1">// Add MVC services to the services container.</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddMvc</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="code"><pre><span></span><span class="c1">/// And service definition somewhere, deeper in the code</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IBankManager</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">OpenAccount</span><span class="p">(</span><span class="kt">string</span> <span class="n">clientName</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">BankManager</span> <span class="p">:</span> <span class="n">IBankManager</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="nf">OpenAccount</span><span class="p">(</span><span class="kt">string</span> <span class="n">clientName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Account creating process...</span>
+
+        <span class="k">return</span> <span class="n">Random</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1000000</span><span class="p">,</span> <span class="m">9999999</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Every service must be described in <code>ConfigureServices</code> method manualy which means that something can be easily missed.
+Many people who create libraries like MVC they add static extension methods to simplify registration.
+It means all descriptions of their services are hidden.
+They make our life easier but what about our own custom services ? What if you have dozens of them ?</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>I'm inspired by how Orchard team resolves that issue.
+They created interfaces which correspond to lifetime scopes. So every service interface inherits appropriate "scope interface" and describes dependencies to register in global container.
+In my case it looks like below - interfaces correspond exactly to <code>ServiceLifetime</code> enum.</p>
+<div class="code"><pre><span></span><span class="c1">// You can use it to get all dependencies</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IDependency</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="n">ISingletonDependency</span> <span class="p">:</span> <span class="n">IDependency</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IScopedDependency</span> <span class="p">:</span> <span class="n">IDependency</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="n">ITransientDependency</span> <span class="p">:</span> <span class="n">IDependency</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="c1">// Omit registration for special cases</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="n">INotRegisterDependency</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">#</a></h2>
+<p>In order to use this approach you have to do two things:</p>
+<ul>
+<li>Select dependency interface and inherit</li>
+</ul>
+<div class="code"><pre><span></span><span class="c1">// It will be registered as a</span>
+<span class="c1">// new ServiceDescriptor(typeof(IBankManager), typeof(BankManager), ServiceLifetime.Transient);</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IBankManager</span> <span class="p">:</span> <span class="n">ITransientDependency</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">OpenAccount</span><span class="p">(</span><span class="kt">string</span> <span class="n">clientName</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">BankManager</span> <span class="p">:</span> <span class="n">IBankManager</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="nf">OpenAccount</span><span class="p">(</span><span class="kt">string</span> <span class="n">clientName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Account creating process...</span>
+
+        <span class="k">return</span> <span class="n">Random</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1000000</span><span class="p">,</span> <span class="m">9999999</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ul>
+<li>Use extensions methods for <code>IServiceCollection</code> or <code>ServiceDescriptorsBuilder</code> to retrieve all dependencies from assemblies (see below)</li>
+</ul>
+<div class="code"><pre><span></span><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">assemblies</span> <span class="p">=</span> <span class="p">...</span> <span class="n">Get</span> <span class="n">all</span> <span class="n">assemblies</span> <span class="n">ex</span><span class="p">.</span> <span class="k">by</span> <span class="n">ILibraryLoader</span> <span class="n">or</span> <span class="n">Assembly</span><span class="p">.</span><span class="n">GetExecutingAssembly</span><span class="p">(...)</span> <span class="n">etc</span><span class="p">.</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddFromAssemblies</span><span class="p">(</span><span class="n">assemblies</span><span class="p">);</span>
+
+    <span class="c1">// Add MVC services to the services container.</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddMvc</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>There are many custom ways to use service description builder. Most cases described in <a href="../customizations">customizations</a> section.
+Also you can find list of additional features <a href="../features">here</a></p>
+          <aside class="copyright" role="note">
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../.." title="Home">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Home
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../features/" title="Features">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Features
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = 'app-enhance/ae-docs';
+    </script>
+    <script src="../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>

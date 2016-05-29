@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://app-enhance.github.io/</loc>
-     <lastmod>2016-05-28</lastmod>
+     <lastmod>2016-05-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,11 +12,43 @@
     
         
     <url>
-     <loc>https://app-enhance.github.io/dependency-injection/</loc>
-     <lastmod>2016-05-28</lastmod>
+     <loc>https://app-enhance.github.io/dependency-injection/getting-started/</loc>
+     <lastmod>2016-05-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>https://app-enhance.github.io/dependency-injection/features/</loc>
+     <lastmod>2016-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://app-enhance.github.io/dependency-injection/customizations/</loc>
+     <lastmod>2016-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://app-enhance.github.io/dependency-injection/integrations/</loc>
+     <lastmod>2016-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://app-enhance.github.io/dependency-injection/roadmap/</loc>
+     <lastmod>2016-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://app-enhance.github.io/contributing/</loc>
+     <lastmod>2016-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
 </urlset>
